@@ -1,0 +1,25 @@
+.circle{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: orangered;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    text-decoration: none;
+    /* canh giữa */
+    position: fixed;
+    left: calc(50% - 40px);
+    top: 100px;
+    
+    
+}
+.circle:nth-child(1){animation: zoom 4s infinite linear;}
+.circle:nth-child(2){animation: zoom 4s 1s infinite linear;}
+.circle:nth-child(3){animation: zoom 4s 2s infinite linear;}
+.circle:nth-child(4){animation: zoom 4s 3s infinite linear;}
+@keyframes zoom{
+    0% { scale: 1; opacity: 1;}
+    100% { scale: 3; opacity: 0;}
+}
