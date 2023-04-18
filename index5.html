@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* ẩn trỏ chuột */
+    *{cursor: none;}
+
+    body{background: navy;}
+    .logo{
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+    .logo::before{
+        content: '';
+        position: absolute;
+        width: 100px;
+        top: 0;
+        bottom: 0;
+        left: -100;
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 100%);
+        mix-blend-mode: overlay;
+        
+
+    }
+    .logo:hover::before{
+        animation: light 1s infinite;
+    }
+    @keyframes light{
+        0% { left: 0;}
+        100% { left: 100%;}
+    }
+    .spotlight{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: yellow;
+        mix-blend-mode: lighten;
+        filter: blur(2px);
+        box-shadow: 0 0 15px 5px yellow;
+        left: 0;
+        top: 0;
+        opacity: .2;
+        position: fixed;
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 100%);
+
+    }
+</style>
+<body>
+    <div class="logo">
+        <img src="C:\Users\ADMIN\OneDrive\Hình ảnh\logo1.jpg" alt="">
+    </div>
+
+    <div class="spotlight"></div>
+</body>
+<script>
+    // mousemove
+    // left = toa do x
+    // right = toa do y
+   var spotlight = document.querySelector(".spotlight");
+   document.addEventListener('mousemove', function(a){
+    var x = a.clientX;
+    var y = a.clientY;
+    spotlight.style.left = x + "px";
+    spotlight.style.top = y + "px";
+   });
+</script>
+</html>

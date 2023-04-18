@@ -1,0 +1,31 @@
+.spin {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin-top: 200px;
+}
+
+.triangle {
+    border: 5px solid black;
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.triangle span {
+    color: rgb(34, 255, 119);
+    font-size: 2em;
+    position: absolute;
+    top : 50%;
+    left: 80%;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
